@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 import { Colors } from "../../components/formelement/Colors";
+import FadeInView from "../../components/formelement/FadeInView";
 
 const { width } = Dimensions.get("window");
 
@@ -72,47 +73,49 @@ const PresentationScreen = () => {
   return (
     <View style={styles.container}>
       <ScrollView style={{ flex: 1 }}>
-        <View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Carousel
-            loop={false}
-            width={width}
-            height={650}
-            data={slides}
-            scrollAnimationDuration={800}
-            onSnapToItem={(index: any) => setCurrentIndex(index)}
-            renderItem={({ item }) => (
-              <View style={styles.slide}>
-                <Image
-                  source={item?.image}
-                  alt="image"
-                  style={{
-                    width: 300,
-                    height: 350,
-                    resizeMode: "contain",
-                    borderRadius: 10,
-                  }}
-                />
-                <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.description}>{item.description}</Text>
-                {item?.button ? (
-                  <View style={{ width: "100%", marginBottom: 50 }}>
-                    {item.button}
-                  </View>
-                ) : (
-                  <Text></Text>
-                )}
-              </View>
-            )}
-          />
-          <Text style={styles.pagination}>
-            {currentIndex + 1} / {slides.length}
-          </Text>
-        </View>
+        <FadeInView>
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Carousel
+              loop={false}
+              width={width}
+              height={650}
+              data={slides}
+              scrollAnimationDuration={800}
+              onSnapToItem={(index: any) => setCurrentIndex(index)}
+              renderItem={({ item }) => (
+                <View style={styles.slide}>
+                  <Image
+                    source={item?.image}
+                    alt="image"
+                    style={{
+                      width: 300,
+                      height: 350,
+                      resizeMode: "contain",
+                      borderRadius: 10,
+                    }}
+                  />
+                  <Text style={styles.title}>{item.title}</Text>
+                  <Text style={styles.description}>{item.description}</Text>
+                  {item?.button ? (
+                    <View style={{ width: "100%", marginBottom: 50 }}>
+                      {item.button}
+                    </View>
+                  ) : (
+                    <Text></Text>
+                  )}
+                </View>
+              )}
+            />
+            <Text style={styles.pagination}>
+              {currentIndex + 1} / {slides.length}
+            </Text>
+          </View>
+        </FadeInView>
       </ScrollView>
     </View>
   );

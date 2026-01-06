@@ -5,6 +5,7 @@ import { Grid, Flow } from "react-native-animated-spinkit";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 import { Colors } from "../../components/formelement/Colors";
+import FadeInView from "../../components/formelement/FadeInView";
 
 export const LoaderScreen = () => {
   const { width } = useWindowDimensions();
@@ -36,33 +37,37 @@ export const LoaderScreen = () => {
         backgroundColor={Colors.primary}
         style="light"
       />
-      <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
-        <Image
-          style={[
-            { flex: 0.3, justifyContent: "center", borderRadius: 10 },
-            { width, resizeMode: "contain", borderRadius: 10 },
-          ]}
-          source={require("../../../assets/icon.png")}
-        />
-        <View style={{ flexDirection: "row" }}>
-          <Text
-            style={{
-              textAlign: "center",
-              alignSelf: "center",
-              color: Colors.textPrimary,
-              fontSize: 16,
-              marginTop: 20,
-            }}
-          >
-            Veuillez patienter
-          </Text>
-          <Flow
-            style={{ marginTop: 30, marginLeft: 10 }}
-            size={20}
-            color={Colors.textPrimary}
+      <FadeInView>
+        <View
+          style={{ justifyContent: "center", alignItems: "center", flex: 1 }}
+        >
+          <Image
+            style={[
+              { flex: 0.3, justifyContent: "center", borderRadius: 10 },
+              { width, resizeMode: "contain", borderRadius: 10 },
+            ]}
+            source={require("../../../assets/icon.png")}
           />
+          <View style={{ flexDirection: "row" }}>
+            <Text
+              style={{
+                textAlign: "center",
+                alignSelf: "center",
+                color: Colors.textPrimary,
+                fontSize: 16,
+                marginTop: 20,
+              }}
+            >
+              Veuillez patienter
+            </Text>
+            <Flow
+              style={{ marginTop: 30, marginLeft: 10 }}
+              size={20}
+              color={Colors.textPrimary}
+            />
+          </View>
         </View>
-      </View>
+      </FadeInView>
       <View style={{ marginBottom: 5 }}>
         <Grid size={25} color={Colors.primary} />
       </View>
