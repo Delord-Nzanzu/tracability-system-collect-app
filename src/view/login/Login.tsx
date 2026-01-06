@@ -14,6 +14,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { StatusBar } from "expo-status-bar";
 import useLogin from "../../hooks/login/useLogin";
+import { Colors } from "../../components/formelement/Colors";
 
 export default function Login() {
   const { disable, login } = useLogin();
@@ -119,7 +120,7 @@ export default function Login() {
           fontSize: 18,
         }}
       >
-        Talia
+        Tracability-Collect App
       </Text>
     </View>
   );
@@ -128,9 +129,7 @@ export default function Login() {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    // justifyContent: "center",
-    // alignItems: "center",
+    backgroundColor: Colors.background,
     padding: 10,
   },
   textLogin: {

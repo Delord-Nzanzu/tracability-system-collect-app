@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import { Grid, Flow } from "react-native-animated-spinkit";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
+import { Colors } from "../../components/formelement/Colors";
 
 export const LoaderScreen = () => {
   const { width } = useWindowDimensions();
@@ -27,10 +28,14 @@ export const LoaderScreen = () => {
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#fff",
+        backgroundColor: Colors.background,
       }}
     >
-      <StatusBar translucent={true} backgroundColor={"#0E2A47"} style="light" />
+      <StatusBar
+        translucent={true}
+        backgroundColor={Colors.primary}
+        style="light"
+      />
       <View style={{ justifyContent: "center", alignItems: "center" }}>
         <Image
           style={[
@@ -44,7 +49,7 @@ export const LoaderScreen = () => {
             style={{
               textAlign: "center",
               alignSelf: "center",
-              color: "#000",
+              color: Colors.textPrimary,
               fontSize: 16,
             }}
           >
@@ -53,12 +58,12 @@ export const LoaderScreen = () => {
           <Flow
             style={{ marginTop: 10, marginLeft: 10 }}
             size={20}
-            color={"#000"}
+            color={Colors.textPrimary}
           />
         </View>
       </View>
       <View style={{ marginBottom: 5 }}>
-        <Grid size={25} color={"#0E2A47"} />
+        <Grid size={25} color={Colors.primary} />
       </View>
     </View>
   );

@@ -9,6 +9,7 @@ import {
   Image,
 } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
+import { Colors } from "../../components/formelement/Colors";
 
 const { width } = Dimensions.get("window");
 
@@ -43,17 +44,17 @@ const PresentationScreen = () => {
         <TouchableOpacity
           onPress={() => nav.navigate("Login")}
           style={{
-            backgroundColor: "#4AD9FF", // couleur à adapter
+            backgroundColor: Colors.secondary, // couleur à adapter
             padding: 15,
             margin: 10,
             borderRadius: 10,
-            borderColor: "#4AD9FF",
+            borderColor: Colors.secondary,
             borderWidth: 1,
           }}
         >
           <Text
             style={{
-              color: "#000",
+              color: Colors.textPrimary,
               textAlign: "center",
               fontFamily: "monst",
               fontSize: 16,
@@ -111,17 +112,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: Colors.background,
   },
   slide: {
-    backgroundColor: "#fff",
+    backgroundColor: Colors.background,
     borderRadius: 10,
     marginTop: -50,
     padding: 20,
     width: width * 1,
     alignItems: "center",
     justifyContent: "center",
-    shadowColor: "#000",
+    shadowColor: Colors.textPrimary,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 5,
@@ -131,7 +132,7 @@ const styles = StyleSheet.create({
     // fontWeight: "bold",
     textAlign: "center",
     fontFamily: "monst",
-    color: "#000",
+    color: Colors.textPrimary,
     marginTop: 10,
   },
   description: {
@@ -139,13 +140,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 10,
     fontFamily: "monst-r",
-    color: "#000",
+    color: Colors.textPrimary,
   },
   pagination: {
     marginTop: 20,
     fontSize: 18,
     fontFamily: "monst",
-    color: "#4AD9FF",
+    color: Colors.secondary,
   },
 });
 
