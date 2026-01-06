@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Tracability-Collect",
-    "slug": "Tracability-Collect",
+    "name": "Tracability Collect App",
+    "slug": "Tracability Collect App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
