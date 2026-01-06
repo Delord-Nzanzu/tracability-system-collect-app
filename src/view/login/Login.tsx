@@ -110,6 +110,7 @@ export default function Login() {
           </View>
         </FadeInView>
       </ScrollView>
+
       <Text
         style={{
           fontFamily: "monst",
