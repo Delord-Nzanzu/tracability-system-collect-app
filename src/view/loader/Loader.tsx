@@ -1,0 +1,65 @@
+import { View, Text, useWindowDimensions, Image } from "react-native";
+import * as React from "react";
+import { useFonts } from "expo-font";
+import { Grid, Flow } from "react-native-animated-spinkit";
+import { StatusBar } from "expo-status-bar";
+import { useNavigation } from "@react-navigation/native";
+
+export const LoaderScreen = () => {
+  const { width } = useWindowDimensions();
+  const nav = useNavigation<any>();
+
+  const [loaded] = useFonts({
+    monst: require("../../../assets/fonts/static/Montserrat-Bold.ttf"),
+    "monst-r": require("../../../assets/fonts/static/Montserrat-Regular.ttf"),
+    "monst-i": require("../../../assets/fonts/static/Montserrat-Italic.ttf"),
+  });
+  React.useEffect(() => {
+    if (!loaded) return;
+    setTimeout(() => {
+      nav.navigate("PresentationScreen");
+    }, 5000);
+  }, [loaded]);
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#fff",
+      }}
+    >
+      <StatusBar translucent={true} backgroundColor={"#0E2A47"} style="light" />
+      <View style={{ justifyContent: "center", alignItems: "center" }}>
+        <Image
+          style={[
+            { flex: 0.6, justifyContent: "center", borderRadius: 10 },
+            { width, resizeMode: "contain", borderRadius: 10 },
+          ]}
+          source={require("../../../assets/TALIA2.png")}
+        />
+        <View style={{ flexDirection: "row" }}>
+          <Text
+            style={{
+              textAlign: "center",
+              alignSelf: "center",
+              color: "#000",
+              fontSize: 16,
+            }}
+          >
+            Veuillez patienter
+          </Text>
+          <Flow
+            style={{ marginTop: 10, marginLeft: 10 }}
+            size={20}
+            color={"#000"}
+          />
+        </View>
+      </View>
+      <View style={{ marginBottom: 5 }}>
+        <Grid size={25} color={"#0E2A47"} />
+      </View>
+    </View>
+  );
+};
