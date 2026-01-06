@@ -1,12 +1,4 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ScrollView,
-  KeyboardAvoidingView,
-  Platform,
-} from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import React from "react";
 import TextInputs from "../../components/formelement/TextInputs";
 import Boutons from "../../components/formelement/Boutons";
@@ -38,81 +30,75 @@ export default function Login() {
   });
   return (
     <View style={style.container}>
-      <StatusBar translucent={true} style="dark" />
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS === "ios" ? "padding" : "height"} // ou "position"
-      >
-        <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
-          <View style={style.icone}>
-            <Image
-              source={require("../../../assets/icon.png")}
-              style={{
-                width: 350,
-                height: 200,
-                //   marginTop: 15,
-                objectFit: "contain",
-              }}
-            />
-          </View>
-          <Text style={style.textLogin}>Connexion</Text>
-          <Text
+      <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+        <View style={style.icone}>
+          <Image
+            source={require("../../../assets/icon.png")}
             style={{
-              fontFamily: "monst-r",
-              marginTop: 5,
+              width: 350,
+              height: 200,
+              //   marginTop: 15,
+              objectFit: "contain",
             }}
-          >
-            Bienvenue ! Veuillez vous connecter pour accéder à votre tableau de
-            bord.
-          </Text>
-          <TextInputs
-            label="Adresse email"
-            iconname="mail"
-            placeholder="ton-email.com"
-            value={validationForm.values?.login}
-            onBlue={validationForm.handleBlur("login")}
-            onChange={validationForm.handleChange("login")}
-            error={
-              validationForm?.errors?.login &&
-              validationForm?.touched?.login &&
-              true
-            }
-            texterror={
-              validationForm?.errors?.login &&
-              validationForm?.touched?.login &&
-              validationForm?.touched?.login
-            }
           />
-          <TextInputs
-            label="Mot de passe"
-            iconname="key"
-            placeholder="*******"
-            value={validationForm.values?.passwords}
-            onBlue={validationForm.handleBlur("passwords")}
-            onChange={validationForm.handleChange("passwords")}
-            error={
-              validationForm?.errors?.passwords &&
-              validationForm?.touched?.passwords &&
-              true
-            }
-            texterror={
-              validationForm?.errors?.passwords &&
-              validationForm?.touched?.passwords &&
-              validationForm?.touched?.passwords
-            }
-            secureTextEntry={true}
-          />
-          <Boutons
-            text="Connexion"
-            iconname="login"
-            onPress={(e) => {
-              e.preventDefault();
-              validationForm.handleSubmit();
-            }}
-            disabled={disable}
-          />
-        </ScrollView>
-      </KeyboardAvoidingView>
+        </View>
+        <Text style={style.textLogin}>Connexion</Text>
+        <Text
+          style={{
+            fontFamily: "monst-r",
+            marginTop: 5,
+          }}
+        >
+          Bienvenue ! Veuillez vous connecter pour accéder à votre tableau de
+          bord.
+        </Text>
+        <TextInputs
+          label="Adresse email"
+          iconname="mail"
+          placeholder="ton-email.com"
+          value={validationForm.values?.login}
+          onBlue={validationForm.handleBlur("login")}
+          onChange={validationForm.handleChange("login")}
+          error={
+            validationForm?.errors?.login &&
+            validationForm?.touched?.login &&
+            true
+          }
+          texterror={
+            validationForm?.errors?.login &&
+            validationForm?.touched?.login &&
+            validationForm?.touched?.login
+          }
+        />
+        <TextInputs
+          label="Mot de passe"
+          iconname="key"
+          placeholder="*******"
+          value={validationForm.values?.passwords}
+          onBlue={validationForm.handleBlur("passwords")}
+          onChange={validationForm.handleChange("passwords")}
+          error={
+            validationForm?.errors?.passwords &&
+            validationForm?.touched?.passwords &&
+            true
+          }
+          texterror={
+            validationForm?.errors?.passwords &&
+            validationForm?.touched?.passwords &&
+            validationForm?.touched?.passwords
+          }
+          secureTextEntry={true}
+        />
+        <Boutons
+          text="Connexion"
+          iconname="login"
+          onPress={(e) => {
+            e.preventDefault();
+            validationForm.handleSubmit();
+          }}
+          disabled={disable}
+        />
+      </ScrollView>
       <Text
         style={{
           fontFamily: "monst",
@@ -135,7 +121,7 @@ const style = StyleSheet.create({
   textLogin: {
     fontFamily: "monst",
     fontSize: 28,
-    marginTop: -15,
+    marginTop: 5,
   },
   icone: {
     justifyContent: "center",

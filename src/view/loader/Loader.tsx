@@ -36,13 +36,13 @@ export const LoaderScreen = () => {
         backgroundColor={Colors.primary}
         style="light"
       />
-      <View style={{ justifyContent: "center", alignItems: "center" }}>
+      <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
         <Image
           style={[
-            { flex: 0.6, justifyContent: "center", borderRadius: 10 },
+            { flex: 0.3, justifyContent: "center", borderRadius: 10 },
             { width, resizeMode: "contain", borderRadius: 10 },
           ]}
-          source={require("../../../assets/TALIA2.png")}
+          source={require("../../../assets/icon.png")}
         />
         <View style={{ flexDirection: "row" }}>
           <Text
@@ -51,12 +51,13 @@ export const LoaderScreen = () => {
               alignSelf: "center",
               color: Colors.textPrimary,
               fontSize: 16,
+              marginTop: 20,
             }}
           >
             Veuillez patienter
           </Text>
           <Flow
-            style={{ marginTop: 10, marginLeft: 10 }}
+            style={{ marginTop: 30, marginLeft: 10 }}
             size={20}
             color={Colors.textPrimary}
           />

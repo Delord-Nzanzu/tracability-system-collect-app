@@ -9,6 +9,7 @@ import {
 import { Grid } from "react-native-animated-spinkit";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
 import type { IconProps } from "react-native-vector-icons/Icon";
+import { Colors } from "./Colors";
 
 interface BoutonsProps {
   text: string;
@@ -35,7 +36,7 @@ const Boutons = ({
       >
         {disabled ? (
           <View style={styles.spinnerWrapper}>
-            <Grid size={25} color={"#4AD9FF"} />
+            <Grid size={25} color={Colors.textWhite} />
           </View>
         ) : (
           <View style={styles.content}>
@@ -59,10 +60,8 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     marginTop: 10,
-    // borderColor: "red",
-    backgroundColor: "#4AD9FF",
-    color: "#000",
-    // borderWidth: 1,
+    backgroundColor: Colors.primary,
+    color: Colors.textWhite,
     padding: 10,
     borderRadius: 10,
     height: 50,
@@ -84,6 +83,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "monst",
     fontSize: 16,
+    color: Colors.textWhite,
   },
 });
 

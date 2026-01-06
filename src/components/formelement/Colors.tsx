@@ -4,4 +4,5 @@ export const Colors = {
   background: "#EAEAEA",
   textPrimary: "#000000",
   textSecondary: "#555555",
+  textWhite: "#FFFFFF",
 };

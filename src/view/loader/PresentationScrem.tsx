@@ -44,17 +44,17 @@ const PresentationScreen = () => {
         <TouchableOpacity
           onPress={() => nav.navigate("Login")}
           style={{
-            backgroundColor: Colors.secondary, // couleur à adapter
+            backgroundColor: Colors.primary, // couleur à adapter
             padding: 15,
             margin: 10,
             borderRadius: 10,
-            borderColor: Colors.secondary,
+            borderColor: Colors.primary,
             borderWidth: 1,
           }}
         >
           <Text
             style={{
-              color: Colors.textPrimary,
+              color: Colors.textWhite,
               textAlign: "center",
               fontFamily: "monst",
               fontSize: 16,
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 18,
     fontFamily: "monst",
-    color: Colors.secondary,
+    color: Colors.primary,
   },
 });
 

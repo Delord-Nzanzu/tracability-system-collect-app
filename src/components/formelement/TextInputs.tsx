@@ -11,6 +11,7 @@ import {
 import { Divider } from "react-native-elements";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
 import type { IconProps } from "react-native-vector-icons/Icon";
+import { Colors } from "./Colors";
 
 interface TextInputsProps {
   id?: string;
@@ -55,7 +56,7 @@ const TextInputs: FC<TextInputsProps> = ({
         {iconname ? (
           <View style={styles.iconWrapper}>
             <View style={styles.iconContainer}>
-              <AntDesign name={iconname} color="#4AD9FF" size={25} />
+              <AntDesign name={iconname} color={Colors.primary} size={25} />
             </View>
             <Divider
               style={[styles.divider, { borderColor: error ? "red" : "gray" }]}

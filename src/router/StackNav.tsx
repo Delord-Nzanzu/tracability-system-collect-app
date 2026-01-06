@@ -1,8 +1,8 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { LoaderScreen } from "../view/loader/Loader";
 import PresentationScreen from "../view/loader/PresentationScrem";
 import Login from "../view/login/Login";
+import { LoaderScreen } from "../view/loader/Loader";
 
 const Stack = createStackNavigator();
 
